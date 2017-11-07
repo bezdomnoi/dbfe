@@ -6,7 +6,7 @@
 		require_once $filename;
 	}
 	
-	$db = new database($db_host,$db_name,$db_user,$db_password);
+	$db = new DataBase($db_host,$db_name,$db_user,$db_password);
 		
 	// handle POST / GET
 	
