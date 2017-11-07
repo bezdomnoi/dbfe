@@ -1,10 +1,5 @@
 <?php
-	
-	$db_host     = 'localhost';
-	$db_name     = 'bsug';
-	$db_user     = 'root';
-	$db_password = 'Ladet15ormer';
-	
+
 
 	foreach (glob("include/*.php") as $filename)
 	{
