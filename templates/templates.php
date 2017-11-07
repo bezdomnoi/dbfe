@@ -7,8 +7,12 @@
     <script src="<?php echo $js;?>"></script>
   </head>
   <body>
-    <?php
-		require_once('templates/'.$page);
-	?>
+	<div id="container">
+<?php
+	require_once('templates/header.php');
+	require_once('templates/menu.php');
+	require_once('templates/'.$page);
+?>
+	</div>
   </body>
 </html>
