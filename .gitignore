@@ -1,2 +1,3 @@
 
 include/local.php
+include/config.db.local.php

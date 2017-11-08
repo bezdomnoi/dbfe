@@ -9,5 +9,9 @@
 		"key" => "REGISTER",
 		"url" => "register.php"
 	);
-
+	
+	$menu[] = array(
+		"key" => "LOGIN",
+		"url" => "login.php"
+	);
 ?>

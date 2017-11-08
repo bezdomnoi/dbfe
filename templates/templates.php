@@ -11,6 +11,7 @@
 <?php
 	require_once('templates/header.php');
 	require_once('templates/menu.php');
+	require_once('templates/feedback.php');
 	require_once('templates/'.$page);
 ?>
 	</div>
