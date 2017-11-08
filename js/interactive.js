@@ -1,18 +1,3 @@
-function fieldsMatch(id1,id2) {
-	
-	el1 = document.getElementById(id1);
-	el2 = document.getElementById(id2);
-	
-	if (el1.value==el2.value && el1.value!='') {
-		return true;
-	} else {
-		el1.style.backgroundColor="red";
-		el2.style.backgroundColor="red";
-		alert('Highlighted fields do not match');
-		return false;
-	}
-}
-
 function clearInput(el) {
 	if (el.style.backgroundColor!="") {
 		el.style.backgroundColor="";
@@ -20,23 +5,33 @@ function clearInput(el) {
 	}
 }
 
-function checkPasswords(id1,id2) {
-	el1 = document.getElementById(id1);
-	el2 = document.getElementById(id2);
-
-	var regex = /^.{8,}$/;
-	
-	if (regex.test(el1.value)) {
-		if (el1.value==el2.value) {
+function checkPasswords(pswd1,pswd2,pswd_pattern,pswd_legend) {
+	var regex = new RegExp(pswd_pattern); // /^.{8,}$/;
+	var ok = false;
+	if (pswd1.value==pswd2.value) {
+		if (regex.test(pswd1.value)) {
 			return true;
 		} else {
-			el1.style.backgroundColor="red";
-			el2.style.backgroundColor="red";
-			alert('Highlighted fields do not match');
-			return false;
+			alert(pswd_legend);
 		}
 	} else {
-		alert('Passwords need to be at least 8 characters');
-		return false;
+		alert('Passwords do not match');
+	}
+
+	pswd1.style.backgroundColor="red";
+	pswd2.style.backgroundColor="red";
+	return false;
+
+}
+
+function checkFields(frm) {
+	if (frm.id == 'FORM_USER_REGISTER') 
+	{
+		pswd1 = document.getElementById('user_password1');
+		pswd2 = document.getElementById('user_password2');
+		
+		if (typeof(password_pattern) == 'undefined') password_pattern = /.*/;
+		if (typeof(password_legend) == 'undefined') password_legend = "";
+		return checkPasswords(pswd1,pswd2,password_pattern,password_legend);
 	}
 }

@@ -32,14 +32,7 @@
 			$feedback->putMessage('Controller not specified in POST');
 		}
 	}
-	
-	
-
 		
-	// handle POST / GET
-	
-	// build site
-	
 	require_once('templates/templates.php');
 	
 

@@ -1,9 +1,13 @@
 <?php
 	if (isset($feedback)) {
-		$msgs = $feedback->getMessages();
 		
-		foreach($msgs as $msg) {
-			echo "Error: {$msg}<br>";
+		$msgs = $feedback->getMessages();
+		if (!empty($msgs)) {
+			echo '<p>';
+			foreach($msgs as $msg) {
+				echo "NOTICE: ".htmlspecialchars($msg)."<br>";
+			}
+			echo '</p>';
 		}
 	}
 ?>
