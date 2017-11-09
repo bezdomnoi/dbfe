@@ -8,9 +8,15 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title><?php echo $title;?></title>
-    <link rel="stylesheet" href="<?php echo $style;?>">
-    <script src="<?php echo $js;?>"></script>
+<?php
+	echo '<title>'.$title.'</title>';
+	foreach ($styles as $style) {
+		echo '<link rel="stylesheet" href="'.$style.'">';
+    }
+	foreach ($js as $script) {
+		echo '<script src="'.$script.'"></script>';
+	}
+?>
 	<script>
 		var password_pattern = <?php echo $pswd_security_pattern;?>;
 		var password_legend = '<?php echo $pswd_security_legend?>';

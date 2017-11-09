@@ -1,4 +1,7 @@
 <?php
+	
+	$styles[] = 'css/beautiful.css';
+	$js[] = 'js/interactive.js';
 
 	foreach (glob("include/*.php") as $filename)
 	{
