@@ -24,5 +24,9 @@
 		"key" => "ADMIN",
 		"url" => "admin.php",
 	);
+	$menu[] = array(
+		"key" => "MY CLIENTS",
+		"url" => "customers.php",
+	);
 
 ?>

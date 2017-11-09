@@ -1,7 +1,5 @@
 <?php
-	$ts = microtime();
-	
-	// include classes and other files
+
 	foreach (glob("include/*.php") as $filename)
 	{
 		require_once $filename;
@@ -19,7 +17,6 @@
 			if (isset($controllers[$_POST['FORM_CONTROLLER']]) && strlen($controllers[$_POST['FORM_CONTROLLER']])) 
 			{
 				$controller_file = 'controllers/'.$controllers[$_POST['FORM_CONTROLLER']];
-				
 				if (file_exists($controller_file)) 
 				{
 					require_once($controller_file);
@@ -37,13 +34,6 @@
 		}
 	}
 	
-	if (isset($_SESSION['user'])) {
-		
-	}
-	
 	require_once('templates/templates.php');
-	
-	
-	echo microtime()-$ts;
 	
 ?>

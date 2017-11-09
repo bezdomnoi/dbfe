@@ -25,7 +25,7 @@ function checkPasswords(pswd1,pswd2,pswd_pattern,pswd_legend) {
 }
 
 function checkFields(frm) {
-	if (frm.id == 'FORM_USER_REGISTER') 
+	if (frm.id == 'FORM_USER_REGISTER' || frm.id == 'FORM_USER_PROFILE') 
 	{
 		pswd1 = document.getElementById('user_password1');
 		pswd2 = document.getElementById('user_password2');
@@ -34,4 +34,5 @@ function checkFields(frm) {
 		if (typeof(password_legend) == 'undefined') password_legend = "";
 		return checkPasswords(pswd1,pswd2,password_pattern,password_legend);
 	}
+	
 }
