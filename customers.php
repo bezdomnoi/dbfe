@@ -1,6 +1,6 @@
 <?php
 	
-	$title 	= 'Clients';
+	$title 	= 'Customers';
 	$page 	= 'customers.php';
 	$style 	= 'css/beautiful.css';
 	$js 	= 'js/interactive.js';
