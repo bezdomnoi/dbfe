@@ -34,14 +34,20 @@
     }
 
     function verifyUser($email,$password) {
-      $sql = "SELECT user_id, user_password FROM user_auth WHERE user_email = :email";
+      $sql = "SELECT * FROM user_auth WHERE user_email = :email";
       $query_params = array(':email'=> $email);
 
       $row = $this->db->PDOwithResult($sql,$query_params);
 
       if (count($row) == 1) {
         if (password_verify($password,$row[0]['user_password'])) {
-          return $row[0]['user_id'];
+          
+		  $user['user_id'] = $row[0]['user_id'];
+		  $user['user_email'] = $row[0]['user_email'];
+		  $user['user_display'] = $row[0]['user_display'];
+		  $user['user_active'] = $row[0]['user_active'];
+		    
+		  return $user;
         } else return false;
       } else {
         return false;
@@ -69,17 +75,24 @@
     }
 
     function getUserById($user_id) {
-      $sql = "
-        SELECT
+		$sql = "
+		SELECT
 			*
-        FROM
-          user_auth
-        WHERE
-          user_id = :user_id
-      ";
-      $query_params = array(':user_id'=>$user_id);
+		FROM
+		  user_auth
+		WHERE
+		  user_id = :user_id
+		";
+		$query_params = array(':user_id'=>$user_id);
 
-      return $this->db->PDOsingleResult($sql,$query_params);
+		$row = $this->db->PDOsingleResult($sql,$query_params);
+
+		$user['user_id'] = $row['user_id'];
+		$user['user_email'] = $row['user_email'];
+		$user['user_display'] = $row['user_display'];
+		$user['user_active'] = $row['user_active'];
+
+		return $user;	
     }
 
     function deleteUser($user_id) {
@@ -101,6 +114,23 @@
 
       return $this->db->PDOquery($sql,$query_params);
     }
+	
+	function setEmail($user_id, $email) {
+		$sql = "
+			UPDATE user_auth SET user_email = :email WHERE user_id=:user_id
+		";
+		$query_params = array(':user_id'=>$user_id,':email'=>$email);
+		return $this->db->PDOquery($sql,$query_params);
+	}
+	
+	function setDisplay($user_id, $display) {
+		$sql = "
+			UPDATE user_auth SET user_display = :display WHERE user_id=:user_id
+		";
+		$query_params = array(':user_id'=>$user_id,':display'=>$display);
+		return $this->db->PDOquery($sql,$query_params);
+	}
+	
 
   }
 ?>

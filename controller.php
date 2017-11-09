@@ -1,9 +1,13 @@
 <?php
+	$ts = microtime();
+	
 	// include classes and other files
 	foreach (glob("include/*.php") as $filename)
 	{
 		require_once $filename;
 	}
+	
+	session_start();
 	
 	$db = new DataBase($db_host,$db_name,$db_user,$db_password);
 	$feedback = new FeedBack;
@@ -32,9 +36,14 @@
 			$feedback->putMessage('Controller not specified in POST');
 		}
 	}
+	
+	if (isset($_SESSION['user'])) {
 		
+	}
+	
 	require_once('templates/templates.php');
 	
-
+	
+	echo microtime()-$ts;
 	
 ?>

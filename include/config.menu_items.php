@@ -7,11 +7,22 @@
 
 	$menu[] = array(
 		"key" => "REGISTER",
-		"url" => "register.php"
+		"url" => "register.php",
 	);
 	
 	$menu[] = array(
 		"key" => "LOGIN",
-		"url" => "login.php"
+		"url" => "login.php",
 	);
+	
+	$menu[] = array(
+		"key" => "PROFILE",
+		"url" => "profile.php",
+	);
+	
+	$menu[] = array(
+		"key" => "ADMIN",
+		"url" => "admin.php",
+	);
+
 ?>
