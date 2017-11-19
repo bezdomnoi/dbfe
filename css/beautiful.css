@@ -59,3 +59,8 @@ input {
 	margin: 10px 10px 10px 150px;
 }
 
+.invalid {
+	background-color:red;
+}
+
+
