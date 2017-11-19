@@ -1,5 +1,5 @@
 <?php
-			
+	if (isset($_SESSION['user'])) {	
 ?>
 <form id="FORM_ADMIN_USERS" action="admin.php" method="post" onsubmit="return checkFields(this);">
 	<fieldset>
@@ -21,5 +21,5 @@
 
 
 <?php
-
+	}
 ?>
