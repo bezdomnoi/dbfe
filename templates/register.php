@@ -1,13 +1,7 @@
 <?php
-
-	function pb($str) {
-		echo htmlspecialchars($_POST[$str]);
-	}
-	
 	if (!isset($_SESSION['user'])) {
 	
 		if (!isset($post_back)) $post_back = false;
-		
 		if (!isset($pswd_security_pattern)) $pswd_security_pattern = ".*"; // fallback
 ?>
 <form id="FORM_USER_REGISTER" action="register.php" method="post" onsubmit="return checkFields(this);">
@@ -25,10 +19,6 @@
 		<input type="submit" value="REGISTER" id="btn_register" class="btn_standard" />
 	</fieldset>
 </form>
-<script>
-	var password_pattern = <?php echo $pswd_security_pattern;?>;
-	var password_legend = '<?php echo $pswd_security_legend?>';
-</script>
 
 <?php
 	}

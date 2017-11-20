@@ -1,8 +1,6 @@
 function clearInput(el) {
-	if (el.style.backgroundColor!="") {
-		el.style.backgroundColor="";
-		el.value = '';
-	}
+	el.classList.remove('invalid');
+	el.value = '';
 }
 
 function checkPasswords(pswd1,pswd2,pswd_pattern,pswd_legend) {
@@ -18,8 +16,8 @@ function checkPasswords(pswd1,pswd2,pswd_pattern,pswd_legend) {
 		alert('Passwords do not match');
 	}
 
-	pswd1.style.backgroundColor="red";
-	pswd2.style.backgroundColor="red";
+	pswd1.classList.add('invalid');
+	pswd2.classList.add('invalid');
 	return false;
 
 }
@@ -33,5 +31,17 @@ function checkFields(frm) {
 		if (typeof(password_pattern) == 'undefined') password_pattern = /.*/;
 		if (typeof(password_legend) == 'undefined') password_legend = "";
 		return checkPasswords(pswd1,pswd2,password_pattern,password_legend);
+	
+	} else if (frm.id == 'FORM_USER_PROFILE') 
+	{
+		pswd1 = document.getElementById('user_password1');
+		pswd2 = document.getElementById('user_password2');
+		
+		if (pswd1.value.length > 0) {
+			if (typeof(password_pattern) == 'undefined') password_pattern = /.*/;
+			if (typeof(password_legend) == 'undefined') password_legend = "";
+			return checkPasswords(pswd1,pswd2,password_pattern,password_legend);
+		}
 	}
+	
 }

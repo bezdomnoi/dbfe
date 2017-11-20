@@ -1,3 +1,4 @@
+<div id="feedback_container">
 <?php
 	if (isset($feedback)) {
 		
@@ -11,3 +12,4 @@
 		}
 	}
 ?>
+</div>

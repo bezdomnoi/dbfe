@@ -1,11 +1,7 @@
 <?php
-	function pb($str) {
-		echo htmlspecialchars($_POST[$str]);
-	}
-	
 	if (!isset($_SESSION['user'])) {
 	
-	if (!isset($post_back)) $post_back = false;
+		if (!isset($post_back)) $post_back = false;
 ?>
 
 <form id="FORM_LOGIN" action="login.php" method="post">
