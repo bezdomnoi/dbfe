@@ -4,6 +4,7 @@
 
 <div id="menu_container">
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<ul>
 		<?php
 			foreach ($menu as $item) {
@@ -26,6 +27,8 @@
 			if (isset($_SESSION['user'])) { 
 			?>
 =======
+=======
+>>>>>>> 179185196e6081ea1a07d236ccea04da457fdc15
   <ul>
     <?php
       foreach ($menu as $item) {
@@ -49,6 +52,9 @@
       
       if (isset($_SESSION['user'])) { 
       ?>
+<<<<<<< HEAD
+>>>>>>> 179185196e6081ea1a07d236ccea04da457fdc15
+=======
 >>>>>>> 179185196e6081ea1a07d236ccea04da457fdc15
 <div id="logout_container"><form id="FORM_LOGOUT" action="index.php" method="post" style="float:right">
   <input type="hidden" name="FORM_CONTROLLER" value="LOGOUT"/>
