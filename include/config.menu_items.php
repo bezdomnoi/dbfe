@@ -2,12 +2,15 @@
 
 	$menu[] = array(
 		"key" => "HOME",
-		"url" => "index.php"
+		"url" => "index.php",
 	);
 
 	$menu[] = array(
 		"key" => "REGISTER",
 		"url" => "register.php",
+		'attributes'=> array(
+			'logout'=>1
+		)
 	);
 	
 	$menu[] = array(

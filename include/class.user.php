@@ -26,7 +26,7 @@
           ':email' => $email,
 		  ':display' => $display,
           ':password' => $password,
-          ':active' => (($active == 0) ? 0 : 1)
+          ':active' => (($active === 0) ? 0 : 1)
       );
 
       return $this->db->PDOwithLastId($sql,$query_params);
@@ -130,7 +130,51 @@
 		$query_params = array(':user_id'=>$user_id,':display'=>$display);
 		return $this->db->PDOquery($sql,$query_params);
 	}
-	
+  }
+  
+  class User {
+	  private $id;
+	  private $email;
+	  private $display;
+	  private $active;
+	  private $attribtues = array();
+	  
+	  function __construct($id,$email,$display,$active) {
+		  
+		  $this->id=$id;
+		  $this->email=$email;
+		  $this->display=$display;
+		  $this->active=$active;
+	  }
+	  function getUserId() {
+		  return $this->id;
+	  }
+	  
+	  function setEmail($email) {
+		  $this->email = $email;
+	  }
+	  
+	  function getEmail() {
+		  return $this->email; 
+	  }
+	  
+	  function setDisplay($display) {
+		  $this->display=$display;
+	  }
+	  
+	  function setActive($active) {
+		  $this->active = $active;
+	  }
+	  
+	  function getAttribute($attr_name) {
+		  return $this->attributes[$attr_name];
+	  }
+	  
+	  function load($id) {
+		  
+	  }
+	  
+	  
 
   }
 ?>
