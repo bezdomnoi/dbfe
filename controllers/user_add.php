@@ -22,7 +22,7 @@
 					{
 						if (strlen($req_display) == 0) $req_display = $req_email;
 						
-						$user_added = $uc->addUser($req_email,$req_display,$pswd1,0);
+						$user_added = $uc->addUser($req_email,$req_display,$pswd1,1);
 						
 						if ($user_added) 
 						{
