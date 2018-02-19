@@ -8,7 +8,7 @@
 		$pswd1 = $_POST['user_password1'];
 		$pswd2 = $_POST['user_password2'];
 
-		if (!isset($pswd_security_pattern)) $pswd_security_pattern = "/.*/"; // hardcoded fall-back
+		if (!isset($pswd_security_pattern)) $pswd_security_pattern = "/.*/"; // fall-back
 		
 		$post_back = false;
 		

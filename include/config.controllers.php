@@ -4,5 +4,5 @@
 	$controllers['LOGIN'] = 'user_login.php';
 	$controllers['LOGOUT'] = 'user_login.php';
 	$controllers['USER_UPDATE_SELF'] = 'user_update.php';
-
+	$controllers['USER_UPDATE_ADMIN'] = 'user_update.php';
 ?>

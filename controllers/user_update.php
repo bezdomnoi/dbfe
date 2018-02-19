@@ -74,7 +74,6 @@
 						$feedback->putMessage('Supplied current password is not correct');
 					}
 				} else {
-					
 					$feedback->putMessage('New password and confirmation do not match');
 				}
 			}

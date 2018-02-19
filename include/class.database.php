@@ -18,7 +18,7 @@
 
     }
     // returns all results as ASSOC array
-    function PDOwithResult($sql,$query_params) {
+    function PDOwithResult($sql,$query_params = null) {
       try {
         $stmt = $this->db->prepare($sql);
         $result = $stmt->execute($query_params);
@@ -47,7 +47,7 @@
         $result = $stmt->execute($query_params);
       }
       catch(PDOException $ex) {
-        die('error in PDOwithLastId '. $ex->getMessage());
+        die('error in PDOquery '. $ex->getMessage());
       }
       return $result;
 
@@ -59,7 +59,7 @@
         $result = $stmt->execute($query_params);
       }
       catch(PDOException $ex) {
-        die('error in PDOwithResult '. $ex->getMessage());
+        die('error in PDOsingleResult '. $ex->getMessage());
       }
       $row = $stmt->fetchAll();
       if (count($row) == 1) return $row[0];
