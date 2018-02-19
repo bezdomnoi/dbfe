@@ -41,7 +41,7 @@
       return $this->db->lastInsertId();
     }
     // returns true if successful, false otherwise
-    function PDOquery($sql,$query_params){
+    function PDOquery($sql,$query_params = null){
       try {
         $stmt = $this->db->prepare($sql);
         $result = $stmt->execute($query_params);

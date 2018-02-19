@@ -1,3 +1,3 @@
 <div id="header">
-	<h1> The Page That Keeps On Giving </h1>
+	<h1> PHP MySQL experiments </h1>
 </div>
